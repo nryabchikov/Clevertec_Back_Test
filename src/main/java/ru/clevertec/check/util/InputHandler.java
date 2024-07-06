@@ -20,13 +20,13 @@ public class InputHandler {
 
     private void setArgs(String[] args, String productFilePath, String discountCardFilePath) throws IOException {
         ProductService productService = new ProductService(productFilePath);
-        final String OUTPUT_FILEPATH = "result.csv";
+        final String OUTPUT_FILE_PATH = "result.csv";
         for (String element: args) {
             if (element.contains("discountCard=")) {
                 String numberOfCard = element.substring("discountCard=".length());
                 Map<Integer, Integer> discountCards = CsvReader.readDiscountCards(discountCardFilePath);
                 if (!(discountCards.containsKey(Integer.parseInt(numberOfCard)))) {
-                    CsvWriter.writeErrorToCsv(Status.BAD_REQUEST, OUTPUT_FILEPATH);
+                    CsvWriter.writeErrorToCsv(Status.BAD_REQUEST, OUTPUT_FILE_PATH);
                     throw new DiscountCardNotFoundException("Discount card with number: " + numberOfCard + " not found.");
                 }
                 numberOfDiscountCard = Integer.parseInt(numberOfCard);
@@ -40,7 +40,7 @@ public class InputHandler {
                 int amount = Integer.parseInt(parts[1]);
                 Product product = productService.getProductById(id);
                 if (amount > product.getQuantityInStock()) {
-                    CsvWriter.writeErrorToCsv(Status.BAD_REQUEST, OUTPUT_FILEPATH);
+                    CsvWriter.writeErrorToCsv(Status.BAD_REQUEST, OUTPUT_FILE_PATH);
                     throw new ProductLackOfQuantityException("The product with ID: " +
                             id + " is not available in such quantity.");
                 }
@@ -55,12 +55,12 @@ public class InputHandler {
         }
 
         if (!isBalanceDebitCardSet) {
-            CsvWriter.writeErrorToCsv(Status.BAD_REQUEST, OUTPUT_FILEPATH);
+            CsvWriter.writeErrorToCsv(Status.BAD_REQUEST, OUTPUT_FILE_PATH);
             throw new MissingBalanceException("Balance debit card not provided.");
         }
 
         if (mapOfIdAndAmountOfProducts.isEmpty()) {
-            CsvWriter.writeErrorToCsv(Status.BAD_REQUEST, OUTPUT_FILEPATH);
+            CsvWriter.writeErrorToCsv(Status.BAD_REQUEST, OUTPUT_FILE_PATH);
             throw new MissingProductsException("No products provided.");
         }
     }
