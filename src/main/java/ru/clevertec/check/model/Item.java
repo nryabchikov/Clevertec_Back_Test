@@ -1,37 +1,28 @@
 package main.java.ru.clevertec.check.model;
 
 public class Item {
-    private Product product;
-    private int amount;
-    private double total;
+    private final Product product;
+    private final int amount;
+    private final double total;
+    private final double discount;
 
-    public Item(Product product, int amount, double total) {
+    public double getDiscount() {
+        return discount;
+    }
+    public Item(Product product, int amount, double discount) {
         this.product = product;
         this.amount = amount;
-        this.total = total;
+        this.discount = discount;
+        this.total = product.getPrice() * amount;
     }
 
     public Product getProduct() {
         return product;
     }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
     public int getAmount() {
         return amount;
     }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
-    public double getTotalPrice() {
+    public double getTotal() {
         return total;
-    }
-
-    public void setTotalPrice(double totalPrice) {
-        this.total = totalPrice;
     }
 }
