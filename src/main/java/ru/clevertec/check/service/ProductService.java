@@ -11,9 +11,7 @@ public class ProductService {
     public ProductService(String productFilePath) throws IOException {
         this.productRepository = new ProductRepository(productFilePath);
     }
-
-    public Product getProductById(int id) {
+    public Product getProductById(int id) throws IOException {
         return productRepository.findProductById(id);
     }
-
 }

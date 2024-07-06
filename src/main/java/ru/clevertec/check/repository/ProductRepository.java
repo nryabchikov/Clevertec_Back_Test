@@ -3,6 +3,8 @@ package main.java.ru.clevertec.check.repository;
 import main.java.ru.clevertec.check.exception.ProductNotFoundException;
 import main.java.ru.clevertec.check.model.Product;
 import main.java.ru.clevertec.check.util.CsvReader;
+import main.java.ru.clevertec.check.util.CsvWriter;
+import main.java.ru.clevertec.check.util.Status;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -22,14 +24,16 @@ public class ProductRepository {
         for (String[] stringProduct: mapOfStringProduct) {
             int id = Integer.parseInt(stringProduct[0]);
             String description = stringProduct[1];
-            double price = Double.parseDouble(stringProduct[2]);
+            double price = Double.parseDouble(stringProduct[2].replace(",", "."));
+            int quantityInStock = Integer.parseInt(stringProduct[3]);
             boolean isWholesale = Objects.equals(stringProduct[4], "+");
-            products.put(id, new Product(id, description, price, isWholesale));
+            products.put(id, new Product(id, description, price, quantityInStock, isWholesale));
         }
     }
 
-    public Product findProductById(int id) {
-        if (products.containsKey(id)) {
+    public Product findProductById(int id) throws IOException {
+        if (!(products.containsKey(id))) {
+            CsvWriter.writeErrorToCsv(Status.BAD_REQUEST, "result.csv");
             throw new ProductNotFoundException("Product with id: " + id + " not found.");
         }
         return products.get(id);
