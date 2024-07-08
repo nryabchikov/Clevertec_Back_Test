@@ -11,12 +11,13 @@ import java.io.IOException;
 
 public class CheckRunner {
     public static void main(String[] args) throws IOException {
-        final String DISCOUNT_CARDS_FILEPATH = "src/main/resources/discountCards.csv";
+        args = new String[]{"3-1", "2-5", "5-1", "discountCard=1111", "balanceDebitCard=100", "saveToFile=result1.csv",
+        "datasource.url=jdbc:postgresql://localhost:5432/clevertec_db", "datasource.username=nikitaryabchikov", "datasource.password=123"};
         String defaultSaveFilePath = "result.csv";
         try {
-            InputHandler inputHandler = new InputHandler(args, DISCOUNT_CARDS_FILEPATH);
+            InputHandler inputHandler = new InputHandler(args);
             defaultSaveFilePath = inputHandler.getSaveFilePath();
-            CheckService checkService = new CheckService(inputHandler.getProductFilePath());
+            CheckService checkService = new CheckService();
             Check check = checkService.generateCheck(
                     inputHandler.getMapOfIdAndAmountOfProducts(),
                     inputHandler.getNumberOfDiscountCard(),

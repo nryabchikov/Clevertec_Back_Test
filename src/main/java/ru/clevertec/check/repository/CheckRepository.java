@@ -7,6 +7,7 @@ import ru.clevertec.check.service.ProductService;
 import ru.clevertec.check.util.MathRounder;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -14,12 +15,12 @@ import java.util.Map;
 public class CheckRepository {
     private final ProductService productService;
 
-    public CheckRepository(String productFilePath) throws IOException {
-        this.productService = new ProductService(productFilePath);
+    public CheckRepository() throws IOException {
+        this.productService = new ProductService();
     }
 
     public Check generateCheck(Map<Integer, Integer> mapOfIdAndAmountOfProduct, int numberOfDiscountCard,
-                               int discountPercentage, double balanceDebitCard) throws IOException {
+                               int discountPercentage, double balanceDebitCard) throws SQLException {
         Check.CheckBuilder checkBuilder = new Check.CheckBuilder();
         double totalPrice = 0.0;
         double totalDiscount = 0.0;
