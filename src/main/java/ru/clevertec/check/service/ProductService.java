@@ -3,15 +3,15 @@ package ru.clevertec.check.service;
 import ru.clevertec.check.model.Product;
 import ru.clevertec.check.repository.ProductRepository;
 
-import java.io.IOException;
+import java.sql.SQLException;
 
 public class ProductService {
     private final ProductRepository productRepository;
 
-    public ProductService(String productFilePath) throws IOException {
-        this.productRepository = new ProductRepository(productFilePath);
+    public ProductService() {
+        this.productRepository = new ProductRepository();
     }
-    public Product getProductById(int id) throws IOException {
-        return productRepository.findProductById(id);
+    public Product getProductById(int id) throws SQLException {
+        return productRepository.getProductById(id);
     }
 }
