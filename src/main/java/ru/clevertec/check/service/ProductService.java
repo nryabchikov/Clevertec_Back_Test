@@ -1,7 +1,7 @@
-package main.java.ru.clevertec.check.service;
+package ru.clevertec.check.service;
 
-import main.java.ru.clevertec.check.model.Product;
-import main.java.ru.clevertec.check.repository.ProductRepository;
+import ru.clevertec.check.model.Product;
+import ru.clevertec.check.repository.ProductRepository;
 
 import java.io.IOException;
 

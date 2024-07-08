@@ -1,11 +1,11 @@
-package main.java.ru.clevertec.check;
+package ru.clevertec.check;
 
-import main.java.ru.clevertec.check.exception.*;
-import main.java.ru.clevertec.check.model.Check;
-import main.java.ru.clevertec.check.service.CheckService;
-import main.java.ru.clevertec.check.util.CsvWriter;
-import main.java.ru.clevertec.check.util.InputHandler;
-import main.java.ru.clevertec.check.util.Status;
+import ru.clevertec.check.exception.*;
+import ru.clevertec.check.model.Check;
+import ru.clevertec.check.service.CheckService;
+import ru.clevertec.check.util.CsvWriter;
+import ru.clevertec.check.util.InputHandler;
+import ru.clevertec.check.util.Status;
 
 import java.io.IOException;
 
