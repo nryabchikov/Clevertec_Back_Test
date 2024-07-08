@@ -2,10 +2,10 @@ package ru.clevertec.check.model;
 
 public class Product {
     private int id;
-    private final String description;
-    private final double price;
-    private final int quantityInStock;
-    private final boolean isWholesale;
+    private String description;
+    private double price;
+    private int quantityInStock;
+    private boolean isWholesale;
 
 
     public Product(int id, String description, double price, int quantityInStock, boolean isWholesale) {
@@ -28,5 +28,21 @@ public class Product {
     }
     public boolean isWholesale() {
         return isWholesale;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setQuantityInStock(int quantityInStock) {
+        this.quantityInStock = quantityInStock;
+    }
+
+    public void setWholesale(boolean wholesale) {
+        isWholesale = wholesale;
     }
 }
