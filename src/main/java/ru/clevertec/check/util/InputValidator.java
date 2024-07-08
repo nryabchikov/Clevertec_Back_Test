@@ -8,7 +8,7 @@ import ru.clevertec.check.exception.SaveToFileNotFoundException;
 import java.io.IOException;
 
 public class InputValidator {
-     static void validateArgs(boolean isBalanceDebitCardSet, boolean isEmptyMap, boolean isProductFilePathSet,
+     static void validateArgs(boolean isBalanceDebitCardSet, boolean isEmptyMap,
                               boolean isSaveToFilePathSet, String OUTPUT_FILE_PATH) throws IOException {
         if (!isBalanceDebitCardSet) {
             CsvWriter.writeErrorToCsv(Status.BAD_REQUEST, OUTPUT_FILE_PATH);
@@ -18,11 +18,6 @@ public class InputValidator {
         if (isEmptyMap) {
             CsvWriter.writeErrorToCsv(Status.BAD_REQUEST, OUTPUT_FILE_PATH);
             throw new MissingProductsException("No products provided.");
-        }
-
-        if (!isProductFilePathSet) {
-            CsvWriter.writeErrorToCsv(Status.BAD_REQUEST, OUTPUT_FILE_PATH);
-            throw new PathToFileNotFoundException("Path to file with products not provided.");
         }
 
         if (!isSaveToFilePathSet) {
