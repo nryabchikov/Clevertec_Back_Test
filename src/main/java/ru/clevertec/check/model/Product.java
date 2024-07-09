@@ -7,7 +7,6 @@ public class Product {
     private int quantityInStock;
     private boolean isWholesale;
 
-
     public Product(int id, String description, double price, int quantityInStock, boolean isWholesale) {
         this.id = id;
         this.description = description;
@@ -29,6 +28,11 @@ public class Product {
     public boolean isWholesale() {
         return isWholesale;
     }
+
+    public int getId() {
+        return id;
+    }
+
 
     public void setDescription(String description) {
         this.description = description;

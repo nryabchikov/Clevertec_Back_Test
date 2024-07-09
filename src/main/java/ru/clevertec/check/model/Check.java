@@ -9,6 +9,31 @@ public class Check {
     private int discountPercentage;
     private double totalPrice;
     private double totalDiscount;
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
+
+    public void setNumberOfDiscountCard(int numberOfDiscountCard) {
+        this.numberOfDiscountCard = numberOfDiscountCard;
+    }
+
+    public void setDiscountPercentage(int discountPercentage) {
+        this.discountPercentage = discountPercentage;
+    }
+
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public void setTotalDiscount(double totalDiscount) {
+        this.totalDiscount = totalDiscount;
+    }
+
+    public void setTotalPriceWithDiscount(double totalPriceWithDiscount) {
+        this.totalPriceWithDiscount = totalPriceWithDiscount;
+    }
+
     private double totalPriceWithDiscount;
 
     private Check(CheckBuilder builder) {

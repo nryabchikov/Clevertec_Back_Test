@@ -15,8 +15,9 @@ import java.util.Map;
 public class CheckRepository {
     private final ProductService productService;
 
-    public CheckRepository() throws IOException {
-        this.productService = new ProductService();
+    public CheckRepository(ProductService productService) throws IOException {
+        this.productService = productService;
+        //this.productService = new ProductService();
     }
 
     public Check generateCheck(Map<Integer, Integer> mapOfIdAndAmountOfProduct, int numberOfDiscountCard,
@@ -48,7 +49,7 @@ public class CheckRepository {
         return checkBuilder.build();
     }
 
-    private double calculateItemDiscount(Product product, int amount, int discountPercentage) {
+    double calculateItemDiscount(Product product, int amount, int discountPercentage) {
         double discount;
         if (!product.isWholesale() || amount < 5) {
             discount = MathRounder.roundNumberToTwoDigits(product.getPrice() * amount * discountPercentage / 100);

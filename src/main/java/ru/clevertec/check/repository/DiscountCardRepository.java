@@ -12,7 +12,7 @@ import java.util.Map;
 public class DiscountCardRepository {
     public Map<Integer, Integer> getAllDiscountCards() throws SQLException {
         Map<Integer, Integer> discountCards = new HashMap<>();
-        try (Connection connection = DatabaseConnection.getConnection();
+        try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement("SELECT * FROM discount_card");
              ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
@@ -20,5 +20,9 @@ public class DiscountCardRepository {
             }
         }
         return discountCards;
+    }
+
+    protected Connection getConnection() throws SQLException {
+        return DatabaseConnection.getConnection();
     }
 }

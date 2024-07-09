@@ -8,8 +8,8 @@ import java.sql.SQLException;
 public class ProductService {
     private final ProductRepository productRepository;
 
-    public ProductService() {
-        this.productRepository = new ProductRepository();
+    public ProductService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
     }
     public Product getProductById(int id) throws SQLException {
         return productRepository.getProductById(id);
