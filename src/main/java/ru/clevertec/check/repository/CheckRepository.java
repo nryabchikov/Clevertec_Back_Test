@@ -1,10 +1,10 @@
-package main.java.ru.clevertec.check.repository;
+package ru.clevertec.check.repository;
 
-import main.java.ru.clevertec.check.model.Check;
-import main.java.ru.clevertec.check.model.Item;
-import main.java.ru.clevertec.check.model.Product;
-import main.java.ru.clevertec.check.service.ProductService;
-import main.java.ru.clevertec.check.util.MathRounder;
+import ru.clevertec.check.model.Check;
+import ru.clevertec.check.model.Item;
+import ru.clevertec.check.model.Product;
+import ru.clevertec.check.service.ProductService;
+import ru.clevertec.check.util.MathRounder;
 
 import java.io.IOException;
 import java.util.ArrayList;

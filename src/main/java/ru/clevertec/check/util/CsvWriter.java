@@ -1,7 +1,7 @@
-package main.java.ru.clevertec.check.util;
+package ru.clevertec.check.util;
 
-import main.java.ru.clevertec.check.model.Check;
-import main.java.ru.clevertec.check.model.Item;
+import ru.clevertec.check.model.Check;
+import ru.clevertec.check.model.Item;
 
 import java.io.FileWriter;
 import java.io.IOException;

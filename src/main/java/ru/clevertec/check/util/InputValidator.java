@@ -1,7 +1,7 @@
-package main.java.ru.clevertec.check.util;
+package ru.clevertec.check.util;
 
-import main.java.ru.clevertec.check.exception.MissingBalanceException;
-import main.java.ru.clevertec.check.exception.MissingProductsException;
+import ru.clevertec.check.exception.MissingBalanceException;
+import ru.clevertec.check.exception.MissingProductsException;
 
 import java.io.IOException;
 

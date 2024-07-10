@@ -1,4 +1,4 @@
-package main.java.ru.clevertec.check.util;
+package ru.clevertec.check.util;
 
 public class MathRounder {
     public static double roundNumberToTwoDigits(double number) {

@@ -1,10 +1,10 @@
-package main.java.ru.clevertec.check.repository;
+package ru.clevertec.check.repository;
 
-import main.java.ru.clevertec.check.exception.ProductNotFoundException;
-import main.java.ru.clevertec.check.model.Product;
-import main.java.ru.clevertec.check.util.CsvReader;
-import main.java.ru.clevertec.check.util.CsvWriter;
-import main.java.ru.clevertec.check.util.Status;
+import ru.clevertec.check.exception.ProductNotFoundException;
+import ru.clevertec.check.model.Product;
+import ru.clevertec.check.util.CsvReader;
+import ru.clevertec.check.util.CsvWriter;
+import ru.clevertec.check.util.Status;
 
 import java.io.IOException;
 import java.util.HashMap;
