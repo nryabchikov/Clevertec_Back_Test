@@ -10,6 +10,12 @@ public class DatabaseConnection {
     private static String password;
 
     public static Connection getConnection() throws SQLException {
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            throw new SQLException("PostgreSQL JDBC драйвер не найден");
+        }
         return DriverManager.getConnection(url, username, password);
     }
 
