@@ -14,8 +14,6 @@ import java.io.IOException;
 
 public class CheckRunner {
     public static void main(String[] args) throws IOException {
-        args = new String[]{"3-1", "2-5", "5-1", "discountCard=1111", "balanceDebitCard=100", "saveToFile=result.csv",
-        "datasource.url=jdbc:postgresql://localhost:5432/clevertec_db", "datasource.username=nikitaryabchikov", "datasource.password=123"};
         String defaultSaveFilePath = "result.csv";
         try {
             InputHandler inputHandler = new InputHandler(args);

@@ -7,15 +7,11 @@ repositories {
 }
 
 dependencies {
-    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+    // Ваши зависимости
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
-    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
-    // https://mvnrepository.com/artifact/org.mockito/mockito-core
     testImplementation 'org.mockito:mockito-core:5.12.0'
-    // https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter
     testImplementation 'org.mockito:mockito-junit-jupiter:5.12.0'
-    // https://mvnrepository.com/artifact/org.assertj/assertj-core
     testImplementation 'org.assertj:assertj-core:3.26.0'
     implementation 'org.postgresql:postgresql:42.6.0'
 }
@@ -32,4 +28,16 @@ jar {
     }
 
     archiveBaseName.set('clevertec-check')
+}
+
+task fatJar(type: Jar) {
+    archiveBaseName.set('clevertec-check-all')
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    manifest {
+        attributes 'Main-Class': 'ru.clevertec.check.CheckRunner'
+    }
+
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }
