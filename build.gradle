@@ -25,5 +25,11 @@ test {
 }
 
 jar {
+    manifest {
+        attributes(
+                'Main-Class': 'ru.clevertec.check.CheckRunner'
+        )
+    }
+
     archiveBaseName.set('clevertec-check')
 }
