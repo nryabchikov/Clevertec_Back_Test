@@ -7,7 +7,6 @@ repositories {
 }
 
 dependencies {
-    // Ваши зависимости
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
     testImplementation 'org.mockito:mockito-core:5.12.0'
@@ -33,11 +32,9 @@ jar {
 task fatJar(type: Jar) {
     archiveBaseName.set('clevertec-check-all')
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-
     manifest {
         attributes 'Main-Class': 'ru.clevertec.check.CheckRunner'
     }
-
     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
