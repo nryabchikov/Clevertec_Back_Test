@@ -6,7 +6,6 @@ import ru.clevertec.check.model.Product;
 import ru.clevertec.check.service.ProductService;
 import ru.clevertec.check.util.MathRounder;
 
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,9 +14,8 @@ import java.util.Map;
 public class CheckRepository {
     private final ProductService productService;
 
-    public CheckRepository(ProductService productService) throws IOException {
+    public CheckRepository(ProductService productService) {
         this.productService = productService;
-        //this.productService = new ProductService();
     }
 
     public Check generateCheck(Map<Integer, Integer> mapOfIdAndAmountOfProduct, int numberOfDiscountCard,
