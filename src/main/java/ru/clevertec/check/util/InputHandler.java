@@ -1,6 +1,5 @@
 package ru.clevertec.check.util;
 
-import ru.clevertec.check.exception.DatabaseCredentialsException;
 import ru.clevertec.check.exception.DiscountCardNotFoundException;
 import ru.clevertec.check.exception.MissingProductsException;
 import ru.clevertec.check.exception.ProductLackOfQuantityException;
