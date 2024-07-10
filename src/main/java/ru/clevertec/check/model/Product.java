@@ -15,6 +15,13 @@ public class Product {
         this.isWholesale = isWholesale;
     }
 
+    public Product() {
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getQuantityInStock() {
         return quantityInStock;
     }
