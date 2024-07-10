@@ -1,4 +1,4 @@
-package main.java.ru.clevertec.check.model;
+package ru.clevertec.check.model;
 
 import java.util.ArrayList;
 import java.util.List;

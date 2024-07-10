@@ -1,10 +1,10 @@
-package main.java.ru.clevertec.check.util;
+package ru.clevertec.check.util;
 
-import main.java.ru.clevertec.check.exception.DiscountCardNotFoundException;
-import main.java.ru.clevertec.check.exception.PathToFileNotFoundException;
-import main.java.ru.clevertec.check.exception.ProductLackOfQuantityException;
-import main.java.ru.clevertec.check.model.Product;
-import main.java.ru.clevertec.check.service.ProductService;
+import ru.clevertec.check.exception.DiscountCardNotFoundException;
+import ru.clevertec.check.exception.PathToFileNotFoundException;
+import ru.clevertec.check.exception.ProductLackOfQuantityException;
+import ru.clevertec.check.model.Product;
+import ru.clevertec.check.service.ProductService;
 
 import java.io.IOException;
 import java.nio.file.Path;

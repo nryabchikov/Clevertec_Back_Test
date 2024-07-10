@@ -1,4 +1,4 @@
-package main.java.ru.clevertec.check.util;
+package ru.clevertec.check.util;
 
 public enum Status {
     BAD_REQUEST("BAD REQUEST"),

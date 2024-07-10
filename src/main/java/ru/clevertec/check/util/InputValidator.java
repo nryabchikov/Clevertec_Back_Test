@@ -1,9 +1,9 @@
-package main.java.ru.clevertec.check.util;
+package ru.clevertec.check.util;
 
-import main.java.ru.clevertec.check.exception.MissingBalanceException;
-import main.java.ru.clevertec.check.exception.MissingProductsException;
-import main.java.ru.clevertec.check.exception.PathToFileNotFoundException;
-import main.java.ru.clevertec.check.exception.SaveToFileNotFoundException;
+import ru.clevertec.check.exception.MissingBalanceException;
+import ru.clevertec.check.exception.MissingProductsException;
+import ru.clevertec.check.exception.PathToFileNotFoundException;
+import ru.clevertec.check.exception.SaveToFileNotFoundException;
 
 import java.io.IOException;
 

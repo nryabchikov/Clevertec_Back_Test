@@ -1,4 +1,4 @@
-package main.java.ru.clevertec.check.util;
+package ru.clevertec.check.util;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
